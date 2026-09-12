@@ -1,0 +1,145 @@
+{
+	"name": "tree-builder",
+	"displayName": "Tree Builder",
+	"description": "Build structured folder trees and customizable file contexts from selected files and folders.",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ntkhang03/tree-builder.git"
+	},
+	"version": "1.0.0",
+	"publisher": "NTKhang",
+	"engines": {
+		"vscode": "^1.85.0"
+	},
+	"icon": "images/icon.png",
+	"categories": [
+		"Other",
+		"Programming Languages",
+		"Snippets"
+	],
+	"keywords": [
+		"tree",
+		"folder",
+		"file",
+		"context",
+		"ai",
+		"prompt",
+		"code-review",
+		"export",
+		"markdown",
+		"tree-builder",
+		"file-reader"
+	],
+	"main": "./dist/extension.js",
+	"activationEvents": [
+		"onCommand:treeBuilder.generateContext",
+		"onCommand:treeBuilder.generateContextWithTemplate",
+		"onCommand:treeBuilder.manageTemplates"
+	],
+	"contributes": {
+		"commands": [
+			{
+				"command": "treeBuilder.generateContext",
+				"title": "Build Tree Context",
+				"category": "Tree Builder",
+				"icon": "$(output)"
+			},
+			{
+				"command": "treeBuilder.generateContextWithTemplate",
+				"title": "Build Tree Context with Template...",
+				"category": "Tree Builder",
+				"icon": "$(list-selection)"
+			},
+			{
+				"command": "treeBuilder.manageTemplates",
+				"title": "Manage Templates",
+				"category": "Tree Builder",
+				"icon": "$(gear)"
+			}
+		],
+		"menus": {
+			"explorer/context": [
+				{
+					"command": "treeBuilder.generateContext",
+					"group": "treeBuilder@1"
+				},
+				{
+					"command": "treeBuilder.generateContextWithTemplate",
+					"group": "treeBuilder@2"
+				}
+			],
+			"commandPalette": [
+				{
+					"command": "treeBuilder.generateContext"
+				},
+				{
+					"command": "treeBuilder.generateContextWithTemplate"
+				},
+				{
+					"command": "treeBuilder.manageTemplates"
+				}
+			],
+			"editor/context": [
+				{
+					"command": "treeBuilder.generateContext",
+					"group": "treeBuilder@1"
+				},
+				{
+					"command": "treeBuilder.generateContextWithTemplate",
+					"group": "treeBuilder@2"
+				}
+			]
+		},
+		"configuration": {
+			"title": "Tree Builder",
+			"properties": {
+				"treeBuilder.defaultTemplate": {
+					"type": "string",
+					"default": "ai-context",
+					"description": "ID of the default template used by 'Build Tree Context'."
+				},
+				"treeBuilder.maxFileSize": {
+					"type": "integer",
+					"default": 1048576,
+					"description": "Maximum file size in bytes to include in the context (default is 1MB). Larger files are replaced with an omission notice."
+				},
+				"treeBuilder.promptForTemplate": {
+					"type": "boolean",
+					"default": false,
+					"description": "When true, 'Build Tree Context' will always prompt you to choose a template even if a default is set."
+				},
+				"treeBuilder.logLevel": {
+					"type": "string",
+					"enum": [
+						"debug",
+						"info",
+						"warn",
+						"error"
+					],
+					"default": "info",
+					"description": "Logging verbosity in the Tree Builder Output channel."
+				}
+			}
+		}
+	},
+	"scripts": {
+		"compile": "vsce package -o versions/",
+		"watch": "node esbuild.config.mjs --watch",
+		"build": "node esbuild.config.mjs",
+		"test": "node --test \"dist-test/test/**/*.test.js\"",
+		"test:compile": "tsc -p tsconfig.test.json",
+		"test:run": "npm run test:compile && npm test",
+		"lint": "tsc --noEmit"
+	},
+	"devDependencies": {
+		"@types/node": "^20.11.0",
+		"@types/picomatch": "^3.0.0",
+		"@types/vscode": "^1.85.0",
+		"esbuild": "^0.25.0",
+		"picomatch": "^4.0.2",
+		"typescript": "^5.4.0"
+	},
+	"dependencies": {
+		"picomatch": "^4.0.2"
+	}
+}

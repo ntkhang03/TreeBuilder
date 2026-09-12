@@ -1,0 +1,31 @@
+{
+	"compilerOptions": {
+		"module": "CommonJS",
+		"target": "ES2022",
+		"lib": [
+			"ES2022"
+		],
+		"types": [
+			"node"
+		],
+		"sourceMap": true,
+		"rootDir": "src",
+		"outDir": "dist",
+		"strict": true,
+		"noImplicitAny": true,
+		"strictNullChecks": true,
+		"strictFunctionTypes": true,
+		"noImplicitThis": true,
+		"alwaysStrict": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true
+	},
+	"include": [
+		"src/**/*"
+	]
+}
