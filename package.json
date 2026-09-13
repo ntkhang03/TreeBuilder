@@ -4,10 +4,10 @@
 	"description": "Build structured folder trees and customizable file contexts from selected files and folders.",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/ntkhang03/tree-builder.git"
+		"url": "https://github.com/ntkhang03/TreeBuilder.git"
 	},
-	"version": "1.0.1",
-	"publisher": "NTKhang",
+	"version": "1.0.2",
+	"publisher": "ntkhang03",
 	"engines": {
 		"vscode": "^1.85.0"
 	},
