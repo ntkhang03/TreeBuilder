@@ -5,31 +5,33 @@ Tree Builder is a VS Code extension for turning selected files and folders into 
 ## Contents
 
 - [Tree Builder Documentation](#tree-builder-documentation)
-    - [Contents](#contents)
-    - [Quick Start](#quick-start)
-    - [Ways to Build Context](#ways-to-build-context)
-        - [From the Explorer](#from-the-explorer)
-        - [From the active editor](#from-the-active-editor)
-        - [From the Command Palette](#from-the-command-palette)
-    - [Choosing a Template](#choosing-a-template)
-    - [Managing Templates](#managing-templates)
-        - [Wrapper template](#wrapper-template)
-        - [Per-file template](#per-file-template)
-    - [Built-in Templates](#built-in-templates)
-    - [Generated Output](#generated-output)
-    - [Settings](#settings)
-    - [Development](#development)
-        - [Requirements](#requirements)
-        - [Install and build](#install-and-build)
-        - [Tests and type checking](#tests-and-type-checking)
-        - [Package the extension](#package-the-extension)
-    - [Troubleshooting](#troubleshooting)
-        - [No files are generated](#no-files-are-generated)
-        - [Files are missing from the result](#files-are-missing-from-the-result)
-        - [The default command uses an unexpected format](#the-default-command-uses-an-unexpected-format)
-        - [Inspecting logs](#inspecting-logs)
-    - [Privacy](#privacy)
-    - [License](#license)
+	- [Contents](#contents)
+	- [Quick Start](#quick-start)
+	- [Ways to Build Context](#ways-to-build-context)
+		- [From the Explorer](#from-the-explorer)
+		- [From the active editor](#from-the-active-editor)
+		- [From the Command Palette](#from-the-command-palette)
+	- [Choosing a Template](#choosing-a-template)
+	- [Managing Templates](#managing-templates)
+		- [Wrapper template](#wrapper-template)
+		- [Per-file template](#per-file-template)
+	- [Built-in Templates](#built-in-templates)
+	- [Generated Output](#generated-output)
+	- [Settings](#settings)
+	- [Development](#development)
+		- [Requirements](#requirements)
+		- [Install and build](#install-and-build)
+		- [Tests and type checking](#tests-and-type-checking)
+		- [Package the extension](#package-the-extension)
+	- [Troubleshooting](#troubleshooting)
+		- [No files are generated](#no-files-are-generated)
+		- [Files are missing from the result](#files-are-missing-from-the-result)
+		- [The default command uses an unexpected format](#the-default-command-uses-an-unexpected-format)
+		- [Inspecting logs](#inspecting-logs)
+	- [Privacy](#privacy)
+	- [License](#license)
+	- [Author](#author)
+	- [Acknowledgments](#acknowledgments)
 
 ## Quick Start
 
@@ -51,13 +53,13 @@ Select a file, folder, or multiple resources in the Explorer, then open the cont
 
 The same commands work for a mixed selection of files and folders. When a folder and one of its children are both selected, the nested selection is automatically pruned.
 
-<img src="https://github.com/ntkhang03/tree-builder/raw/HEAD/screenshots/build-tree-context-from-explorer.png" alt="Explorer context menu" width="400"/>
+<img src="https://raw.githubusercontent.com/ntkhang03/TreeBuilder/refs/heads/master/screenshots/build-tree-context-from-explorer.png" alt="Explorer context menu" width="400"/>
 
 ### From the active editor
 
 With a file open, right-click inside the editor and choose **Build Tree Context**. This builds context from the active file or the editor's current resource, depending on the available workspace selection.
 
-<img src="https://github.com/ntkhang03/tree-builder/raw/HEAD/screenshots/build-tree-context-from-editor.png" alt="Editor context menu" width="400"/>
+<img src="https://raw.githubusercontent.com/ntkhang03/TreeBuilder/refs/heads/master/screenshots/build-tree-context-from-editor.png" alt="Editor context menu" width="400"/>
 
 ### From the Command Palette
 
@@ -71,7 +73,7 @@ Open the Command Palette with `Ctrl+Shift+P` (`Cmd+Shift+P` on macOS), then sear
 
 Use **Build Tree Context with Template...** whenever the output format should differ from the default. The picker shows each template's name, description, output target, content mode, and common-path behavior.
 
-<img src="https://github.com/ntkhang03/tree-builder/raw/HEAD/screenshots/build-tree-context-with-template.png" alt="Template picker" width="400"/>
+<img src="https://raw.githubusercontent.com/ntkhang03/TreeBuilder/refs/heads/master/screenshots/build-tree-context-with-template.png" alt="Template picker" width="400"/>
 
 The output target is controlled by the selected template:
 
@@ -94,11 +96,11 @@ Run **Tree Builder: Manage Templates** from the Command Palette. The Template Ma
 
 Built-in templates are read-only. Duplicate one before customizing it.
 
-<img src="https://github.com/ntkhang03/tree-builder/raw/HEAD/screenshots/manage-templates-1.png" alt="Template Manager" width="400"/>
+<img src="https://raw.githubusercontent.com/ntkhang03/TreeBuilder/refs/heads/master/screenshots/manage-templates-1.png" alt="Template Manager" width="400"/>
 
 The editor supports separate include and exclude glob patterns. Enter one pattern per line. You can also add common exclude presets such as `node_modules`, `.git`, build output, and framework-generated directories.
 
-<img src="https://github.com/ntkhang03/tree-builder/raw/HEAD/screenshots/manage-templates-2.png" alt="Template filters and fields" width="400"/>
+<img src="https://raw.githubusercontent.com/ntkhang03/TreeBuilder/refs/heads/master/screenshots/manage-templates-2.png" alt="Template filters and fields" width="400"/>
 
 ### Wrapper template
 
@@ -145,7 +147,7 @@ The default built-in template is **AI Context**. Built-in filters exclude common
 
 The generated context contains a deterministic tree with directories before files and alphabetical ordering. Depending on the selected template, file contents are wrapped in language-aware Markdown code blocks.
 
-<img src="https://github.com/ntkhang03/tree-builder/raw/HEAD/screenshots/tree-context.png" alt="Generated tree context" width="400"/>
+<img src="https://raw.githubusercontent.com/ntkhang03/TreeBuilder/refs/heads/master/screenshots/tree-context.png" alt="Generated tree context" width="400"/>
 
 Tree Builder protects the generation process in two ways:
 
@@ -235,3 +237,12 @@ Tree Builder processes selected files locally. It does not send project contents
 ## License
 
 Tree Builder is distributed under the MIT License. See [LICENSE](LICENSE) for the full text.
+
+## Author
+
+- **Nguyen Thanh Khang** - [ntkhang03](https://github.com/ntkhang03)
+
+## Acknowledgments
+
+- **Gemini** - [gemini](https://gemini.google.com/)
+- **GitHub Copilot** - [copilot](https://copilot.github.com/)

@@ -6,7 +6,7 @@
 		"type": "git",
 		"url": "https://github.com/ntkhang03/tree-builder.git"
 	},
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"publisher": "NTKhang",
 	"engines": {
 		"vscode": "^1.85.0"
